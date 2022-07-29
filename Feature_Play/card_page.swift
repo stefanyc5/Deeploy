@@ -9,19 +9,17 @@ import SwiftUI
 
 struct Item: Identifiable {
     var id: Int
-    var title: String
+    var text: String
 }
 
 class Store: ObservableObject {
     @Published var items: [Item]
 
-    let colors: [Color] = [.red, .orange, .blue, .teal, .mint, .green, .gray, .indigo, .black]
-
     // dummy data
     init() {
         items = []
         for i in 0...15 {
-            let new = Item(id: i, title: "Item \(i)")
+            let new = Item(id: i, text: "Question \(i)")
             items.append(new)
         }
     }
